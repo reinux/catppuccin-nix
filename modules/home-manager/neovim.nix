@@ -11,6 +11,12 @@ in
 {
   options.programs.neovim.catppuccin = lib.ctp.mkCatppuccinOpt { name = "neovim"; };
 
+  options.programs.neovim.catppuccin.transparent_background = lib.mkOption {
+    type = with types; bool;
+    description = "Whether to enable a transparent background";
+    default = false;
+  };
+
   config.programs.neovim = lib.mkIf enable {
     plugins = with pkgs.vimPlugins; [
       {
@@ -23,6 +29,7 @@ in
 
             require("catppuccin").setup({
             	compile_path = compile_path,
+              transparent_background = ${config.programs.neovim.catppuccin.transparent_background},
             	flavour = "${cfg.flavor}",
             })
 
