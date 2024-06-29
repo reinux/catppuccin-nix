@@ -11,7 +11,8 @@ in
 {
   options.programs.neovim.catppuccin = lib.ctp.mkCatppuccinOpt { name = "neovim"; };
 
-  options.programs.neovim.catppuccin.transparent_background = lib.mkOption {
+  options.programs.neovim.catppuccin.transparent_background = lib.mkCatppuccinOpt {
+    name = "neovim";
     type = with types; bool;
     description = "Whether to enable a transparent background";
     default = false;
