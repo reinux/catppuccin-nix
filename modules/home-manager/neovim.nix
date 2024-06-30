@@ -9,13 +9,9 @@ let
   enable = cfg.enable && config.programs.neovim.enable;
 in
 {
-  options.programs.neovim.catppuccin = lib.ctp.mkCatppuccinOpt { name = "neovim"; };
+  options.programs.neovim.catppuccin = lib.ctp.mkCatppuccinOpt { name = "neovim"; } // {
+    transparent_background = lib.mkEnableOption "transparent background";
 
-  options.programs.neovim.catppuccin.transparent_background = lib.mkCatppuccinOpt {
-    name = "neovim";
-    type = with types; bool;
-    description = "Whether to enable a transparent background";
-    default = false;
   };
 
   config.programs.neovim = lib.mkIf enable {
