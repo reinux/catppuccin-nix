@@ -26,7 +26,7 @@ in
 
             require("catppuccin").setup({
             	compile_path = compile_path,
-              transparent_background = ${config.programs.neovim.catppuccin.transparent_background},
+              transparent_background = ${if config.programs.neovim.catppuccin.transparent_background then "true" else "false"},
             	flavour = "${cfg.flavor}",
             })
 
