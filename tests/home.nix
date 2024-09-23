@@ -24,6 +24,8 @@
     cava.enable = true;
     fish.enable = true;
     foot.enable = true;
+    freetube.enable = true;
+    fuzzel.enable = true;
     fzf.enable = true;
     gh-dash.enable = true;
     git = {
@@ -35,6 +37,7 @@
     # listing explicitly so we know it's tested
     glamour.catppuccin.enable = true;
     helix.enable = true;
+    hyprlock.enable = true;
     imv.enable = true;
     k9s.enable = true;
     kitty.enable = true;
@@ -46,10 +49,12 @@
     rio.enable = true;
     rofi.enable = true;
     skim.enable = true;
+    spotify-player.enable = true;
     starship.enable = true;
     swaylock.enable = true;
     tmux.enable = true;
     tofi.enable = true;
+    obs-studio.enable = true;
     waybar.enable = true;
     yazi.enable = true;
     zathura.enable = true;

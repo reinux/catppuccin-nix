@@ -3,7 +3,17 @@ name: Build & deploy website
 on:
   push:
     branches: [main]
+    paths:
+      - 'docs/**'
+      - 'CHANGELOG.md'
+      - '**.lock'
+      - '**.nix'
   pull_request:
+    paths:
+      - 'docs/**'
+      - 'CHANGELOG.md'
+      - '**.lock'
+      - '**.nix'
   workflow_dispatch:
 
 jobs:
@@ -20,7 +30,7 @@ jobs:
         uses: cachix/install-nix-action@V27
 
       - name: Setup cache
-        uses: DeterminateSystems/magic-nix-cache-action@v7
+        uses: DeterminateSystems/magic-nix-cache-action@v8
 
       - name: Run build
         run: |
